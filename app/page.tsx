@@ -3,6 +3,7 @@ import { getAllCalculators } from '@/content/calculators';
 import { getAllArticles } from '@/content/articles';
 import { getAllFaqs } from '@/content/faqs';
 import { getWebsiteJsonLd } from '@/lib/jsonld';
+import SearchBar from '@/components/SearchBar';
 
 export default function Home() {
   const calculators = getAllCalculators();
@@ -38,6 +39,9 @@ export default function Home() {
             >
               Read Guides
             </Link>
+          </div>
+          <div className="mt-8 max-w-xl mx-auto">
+            <SearchBar placeholder="Search calculators, articles, FAQ..." />
           </div>
         </div>
       </section>
