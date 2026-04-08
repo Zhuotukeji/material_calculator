@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,14 +25,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Material Calculator" }],
   creator: "Material Calculator",
   publisher: "Material Calculator",
-  metadataBase: new URL('https://material-calculator.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://material-calculator.vercel.app',
+    url: SITE_URL,
     title: 'Material Calculator - Accurate Paint, Tile & Flooring Estimates',
     description: 'Free online renovation material calculator. Accurately calculate paint, tile, and flooring quantities to avoid waste and shortage.',
     siteName: 'Material Calculator',

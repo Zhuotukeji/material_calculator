@@ -1,6 +1,7 @@
 import { getAllFaqs } from '@/content/faqs';
+import { SITE_URL } from '@/lib/constants';
 
-const BASE_URL = 'https://material-calculator.vercel.app';
+const BASE_URL = SITE_URL;
 
 export function getWebsiteJsonLd() {
   return {
