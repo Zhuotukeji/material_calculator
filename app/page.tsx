@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getAllCalculators } from '@/content/calculators';
 import { getAllArticles } from '@/content/articles';
 import { getAllFaqs } from '@/content/faqs';
+import { getWebsiteJsonLd } from '@/lib/jsonld';
 
 export default function Home() {
   const calculators = getAllCalculators();
@@ -10,6 +11,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getWebsiteJsonLd()) }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-blue-50 to-white py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
