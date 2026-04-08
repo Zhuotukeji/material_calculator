@@ -1,5 +1,3 @@
-import { getAllCalculators } from '@/content/calculators';
-import { getAllArticles } from '@/content/articles';
 import { getAllFaqs } from '@/content/faqs';
 
 const BASE_URL = 'https://material-calculator.vercel.app';
@@ -8,9 +6,9 @@ export function getWebsiteJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: '装修材料计算器',
+    name: 'Material Calculator',
     url: BASE_URL,
-    description: '免费在线装修材料计算工具，帮助您准确计算油漆、瓷砖、地板等材料用量。',
+    description: 'Free online renovation material calculator. Accurately calculate paint, tile, and flooring quantities.',
     potentialAction: {
       '@type': 'SearchAction',
       target: `${BASE_URL}/search?q={search_term_string}`,
@@ -21,14 +19,14 @@ export function getWebsiteJsonLd() {
 
 export function getCalculatorJsonLd(calcId: string) {
   const titles: Record<string, string> = {
-    paint: '油漆计算器',
-    tile: '瓷砖计算器',
-    flooring: '地板计算器',
+    paint: 'Paint Calculator',
+    tile: 'Tile Calculator',
+    flooring: 'Flooring Calculator',
   };
   const descriptions: Record<string, string> = {
-    paint: '在线计算墙面油漆用量，支持不同涂刷遍数和涂刷率设置',
-    tile: '在线计算瓷砖数量，支持不同规格和铺贴方式',
-    flooring: '在线计算地板用量，支持不同铺装方式的损耗计算',
+    paint: 'Calculate wall paint quantity online with support for different coat numbers and coverage rates',
+    tile: 'Calculate tile quantity online with support for different sizes and laying patterns',
+    flooring: 'Calculate flooring quantity online with waste rates for different installation methods',
   };
 
   return {
@@ -42,7 +40,7 @@ export function getCalculatorJsonLd(calcId: string) {
     offers: {
       '@type': 'Offer',
       price: '0',
-      priceCurrency: 'CNY',
+      priceCurrency: 'USD',
     },
   };
 }
@@ -55,14 +53,8 @@ export function getArticleJsonLd(article: { title: string; description: string; 
     description: article.description,
     url: `${BASE_URL}/articles/${article.id}`,
     datePublished: article.publishedAt,
-    author: {
-      '@type': 'Organization',
-      name: '装修材料计算器',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: '装修材料计算器',
-    },
+    author: { '@type': 'Organization', name: 'Material Calculator' },
+    publisher: { '@type': 'Organization', name: 'Material Calculator' },
   };
 }
 
@@ -74,10 +66,7 @@ export function getFaqPageJsonLd() {
     mainEntity: faqs.map(faq => ({
       '@type': 'Question',
       name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
     })),
   };
 }

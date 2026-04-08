@@ -9,24 +9,24 @@ export interface Calculator {
 export const calculators: Calculator[] = [
   {
     id: 'paint',
-    name: '油漆计算器',
-    description: '计算墙面油漆用量，包含涂刷遍数和损耗',
+    name: 'Paint Calculator',
+    description: 'Calculate wall paint quantity including coats and waste',
     icon: '🎨',
-    category: '墙面'
+    category: 'Walls'
   },
   {
     id: 'tile',
-    name: '瓷砖计算器',
-    description: '计算瓷砖数量，支持不同规格和铺贴方式',
+    name: 'Tile Calculator',
+    description: 'Calculate tile quantity for different sizes and laying patterns',
     icon: '🔲',
-    category: '地面/墙面'
+    category: 'Floor/Wall'
   },
   {
     id: 'flooring',
-    name: '地板计算器',
-    description: '计算地板用量，包含不同铺装方式的损耗',
+    name: 'Flooring Calculator',
+    description: 'Calculate flooring quantity with waste rates for different methods',
     icon: '📐',
-    category: '地面'
+    category: 'Floor'
   }
 ];
 

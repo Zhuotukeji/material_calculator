@@ -20,35 +20,31 @@ export default function FlooringForm() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div className="bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-xl font-semibold mb-4">输入参数</h2>
+        <h2 className="text-xl font-semibold mb-4">Enter Parameters</h2>
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">铺装面积 (㎡)</label>
-            <input type="number" value={area} onChange={(e) => setArea(e.target.value)}
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500" placeholder="例如: 30" />
+            <label className="block text-sm font-medium text-gray-700 mb-1">Installation Area (sqm)</label>
+            <input type="number" value={area} onChange={(e) => setArea(e.target.value)} className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500" placeholder="e.g. 30" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">铺装方式</label>
-            <select value={method} onChange={(e) => setMethod(e.target.value)}
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500">
-              <option value="straight">平直铺（损耗 5%）</option>
-              <option value="herringbone">工字铺（损耗 8%）</option>
-              <option value="fishbone">人字铺（损耗 12%）</option>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Installation Method</label>
+            <select value={method} onChange={(e) => setMethod(e.target.value)} className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500">
+              <option value="straight">Straight Lay (5% waste)</option>
+              <option value="herringbone">Brick Pattern (8% waste)</option>
+              <option value="fishbone">Herringbone (12% waste)</option>
             </select>
           </div>
-          <button onClick={calculate} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md">
-            计算用量
-          </button>
+          <button onClick={calculate} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md">Calculate</button>
         </div>
       </div>
       {result && (
         <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-xl font-semibold mb-4">计算结果</h2>
+          <h2 className="text-xl font-semibold mb-4">Results</h2>
           <div className="space-y-3">
-            <div className="flex justify-between py-2 border-b"><span>损耗率</span><span className="font-semibold">{(result.wasteRate * 100).toFixed(0)}%</span></div>
-            <div className="flex justify-between py-2 border-b"><span>含损耗面积</span><span className="font-semibold">{result.totalArea.toFixed(1)} ㎡</span></div>
-            <div className="flex justify-between py-2 bg-blue-50 px-4 rounded-md"><span className="font-medium">建议购买</span><span className="text-2xl font-bold text-blue-600">{result.purchase.toFixed(1)} ㎡</span></div>
-            <p className="text-sm text-gray-500">* 已包含 1㎡ 备用量</p>
+            <div className="flex justify-between py-2 border-b"><span>Waste Rate</span><span className="font-semibold">{(result.wasteRate * 100).toFixed(0)}%</span></div>
+            <div className="flex justify-between py-2 border-b"><span>Area with Waste</span><span className="font-semibold">{result.totalArea.toFixed(1)} sqm</span></div>
+            <div className="flex justify-between py-2 bg-blue-50 px-4 rounded-md"><span className="font-medium">Recommended Purchase</span><span className="text-2xl font-bold text-blue-600">{result.purchase.toFixed(1)} sqm</span></div>
+            <p className="text-sm text-gray-500">* Includes 1 sqm spare</p>
           </div>
         </div>
       )}

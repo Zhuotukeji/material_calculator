@@ -16,25 +16,25 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "装修材料计算器 - 精准计算油漆、瓷砖、地板用量",
-    template: "%s - 装修材料计算器",
+    default: "Material Calculator - Accurate Paint, Tile & Flooring Estimates",
+    template: "%s - Material Calculator",
   },
-  description: "免费在线装修材料计算工具，帮助您准确计算油漆、瓷砖、地板等材料用量，避免浪费和不足。提供专业的装修知识文章和常见问题解答。",
-  keywords: ["装修计算器", "油漆计算", "瓷砖计算", "地板计算", "材料用量", "装修材料", "家装工具"],
-  authors: [{ name: "装修材料计算器" }],
-  creator: "装修材料计算器",
-  publisher: "装修材料计算器",
+  description: "Free online renovation material calculator. Accurately calculate paint, tile, and flooring quantities to avoid waste and shortage. Professional renovation guides and FAQs included.",
+  keywords: ["material calculator", "paint calculator", "tile calculator", "flooring calculator", "renovation tools", "home improvement"],
+  authors: [{ name: "Material Calculator" }],
+  creator: "Material Calculator",
+  publisher: "Material Calculator",
   metadataBase: new URL('https://material-calculator.vercel.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
-    locale: 'zh_CN',
+    locale: 'en_US',
     url: 'https://material-calculator.vercel.app',
-    title: '装修材料计算器 - 精准计算油漆、瓷砖、地板用量',
-    description: '免费在线装修材料计算工具，帮助您准确计算油漆、瓷砖、地板等材料用量，避免浪费和不足。',
-    siteName: '装修材料计算器',
+    title: 'Material Calculator - Accurate Paint, Tile & Flooring Estimates',
+    description: 'Free online renovation material calculator. Accurately calculate paint, tile, and flooring quantities to avoid waste and shortage.',
+    siteName: 'Material Calculator',
   },
   robots: {
     index: true,
@@ -60,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="zh-CN"
+      lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-gray-50">

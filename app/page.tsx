@@ -15,27 +15,28 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getWebsiteJsonLd()) }}
       />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-blue-50 to-white py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            装修材料计算器
+            Material Calculator
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            准确计算油漆、瓷砖、地板用量，避免材料浪费或不足
+            Accurately calculate paint, tile, and flooring quantities to avoid waste or shortage
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/calculators/paint"
               className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
             >
-              开始计算
+              Start Calculating
             </Link>
             <Link
               href="/articles"
               className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition"
             >
-              查看攻略
+              Read Guides
             </Link>
           </div>
         </div>
@@ -45,7 +46,7 @@ export default function Home() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            选择计算器
+            Choose a Calculator
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {calculators.map((calc) => (
@@ -60,7 +61,7 @@ export default function Home() {
                 </h3>
                 <p className="text-gray-600 mb-4">{calc.description}</p>
                 <span className="text-blue-600 font-semibold group-hover:underline">
-                  立即使用 →
+                  Use Now →
                 </span>
               </Link>
             ))}
@@ -72,12 +73,12 @@ export default function Home() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900">装修知识</h2>
+            <h2 className="text-3xl font-bold text-gray-900">Renovation Guides</h2>
             <Link
               href="/articles"
               className="text-blue-600 font-semibold hover:underline"
             >
-              查看全部 →
+              View All →
             </Link>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -97,7 +98,7 @@ export default function Home() {
                   {article.description}
                 </p>
                 <span className="text-blue-600 text-sm font-semibold hover:underline">
-                  阅读更多 →
+                  Read More →
                 </span>
               </Link>
             ))}
@@ -109,12 +110,12 @@ export default function Home() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900">常见问题</h2>
+            <h2 className="text-3xl font-bold text-gray-900">FAQ</h2>
             <Link
               href="/faq"
               className="text-blue-600 font-semibold hover:underline"
             >
-              查看全部 →
+              View All →
             </Link>
           </div>
           <div className="space-y-4">
@@ -144,16 +145,16 @@ export default function Home() {
       <section className="py-16 px-4 bg-blue-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            准备开始装修了吗？
+            Ready to Start Your Renovation?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            使用我们的计算器，精确计算材料用量，节省预算
+            Use our calculators to get precise material estimates and save on your budget
           </p>
           <Link
             href="/calculators/paint"
             className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
           >
-            开始计算
+            Start Calculating
           </Link>
         </div>
       </section>

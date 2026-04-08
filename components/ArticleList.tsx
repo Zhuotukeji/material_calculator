@@ -10,26 +10,16 @@ interface ArticleListProps {
 }
 
 export default function ArticleList({ articles, categories }: ArticleListProps) {
-  const [selected, setSelected] = useState<string>('全部');
+  const [selected, setSelected] = useState<string>('All');
 
-  const filtered = selected === '全部'
-    ? articles
-    : articles.filter(a => a.category === selected);
+  const filtered = selected === 'All' ? articles : articles.filter(a => a.category === selected);
 
   return (
     <>
       <div className="mb-8">
         <div className="flex flex-wrap gap-3">
-          {['全部', ...categories].map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelected(category)}
-              className={`px-4 py-2 rounded-full font-semibold transition ${
-                selected === category
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-blue-500'
-              }`}
-            >
+          {['All', ...categories].map((category) => (
+            <button key={category} onClick={() => setSelected(category)} className={`px-4 py-2 rounded-full font-semibold transition ${selected === category ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-blue-500'}`}>
               {category}
             </button>
           ))}
@@ -44,7 +34,7 @@ export default function ArticleList({ articles, categories }: ArticleListProps) 
 
       {filtered.length === 0 && (
         <div className="text-center py-16">
-          <p className="text-gray-500 text-lg">暂无文章</p>
+          <p className="text-gray-500 text-lg">No articles found</p>
         </div>
       )}
     </>

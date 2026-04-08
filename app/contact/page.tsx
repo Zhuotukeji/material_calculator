@@ -1,102 +1,59 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: '联系我们 - 装修材料计算器',
-  description: '联系装修材料计算器团队，获取帮助和支持',
+  title: 'Contact Us - Material Calculator',
+  description: 'Contact the Material Calculator team for help and support',
 };
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        {/* Breadcrumb */}
         <nav className="text-sm text-gray-600 mb-6">
-          <Link href="/" className="hover:text-blue-600">首页</Link>
+          <Link href="/" className="hover:text-blue-600">Home</Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-900">联系我们</span>
+          <span className="text-gray-900">Contact</span>
         </nav>
 
-        {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            联系我们
-          </h1>
-          <p className="text-xl text-gray-600">
-            我们随时准备为您提供帮助
-          </p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
+          <p className="text-xl text-gray-600">We're always ready to help</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Contact Form */}
           <div className="bg-white rounded-lg border-2 border-gray-200 p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">发送消息</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h2>
             <form className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                  姓名
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
-                  placeholder="请输入您的姓名"
-                />
+                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">Name</label>
+                <input type="text" id="name" className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none" placeholder="Your name" />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                  邮箱
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
-                  placeholder="your@email.com"
-                />
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                <input type="email" id="email" className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none" placeholder="your@email.com" />
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
-                  主题
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
-                  placeholder="请简要描述您的问题"
-                />
+                <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
+                <input type="text" id="subject" className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none" placeholder="Brief description of your issue" />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                  消息内容
-                </label>
-                <textarea
-                  id="message"
-                  rows={6}
-                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none resize-none"
-                  placeholder="请详细描述您的问题或建议..."
-                ></textarea>
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                <textarea id="message" rows={6} className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none resize-none" placeholder="Describe your question or suggestion in detail..."></textarea>
               </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
-              >
-                发送消息
+              <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                Send Message
               </button>
             </form>
           </div>
 
-          {/* Contact Info */}
           <div className="space-y-6">
             <div className="bg-white rounded-lg border-2 border-gray-200 p-6">
               <div className="flex items-start gap-4">
                 <div className="text-3xl">📧</div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">邮箱</h3>
-                  <p className="text-gray-600 mb-2">
-                    support@material-calculator.com
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    我们会在1-2个工作日内回复
-                  </p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Email</h3>
+                  <p className="text-gray-600 mb-2">support@material-calculator.com</p>
+                  <p className="text-sm text-gray-500">We'll reply within 1-2 business days</p>
                 </div>
               </div>
             </div>
@@ -105,60 +62,42 @@ export default function ContactPage() {
               <div className="flex items-start gap-4">
                 <div className="text-3xl">⏰</div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">工作时间</h3>
-                  <p className="text-gray-600 mb-1">
-                    周一至周五：9:00 - 18:00
-                  </p>
-                  <p className="text-gray-600">
-                    周六至周日：休息
-                  </p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Business Hours</h3>
+                  <p className="text-gray-600 mb-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                  <p className="text-gray-600">Saturday - Sunday: Closed</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-blue-50 rounded-lg border-2 border-blue-200 p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">常见问题</h3>
-              <p className="text-gray-600 mb-4 text-sm">
-                在联系我们之前，您可以先查看常见问题页面，也许能找到您需要的答案。
-              </p>
-              <Link
-                href="/faq"
-                className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition text-sm"
-              >
-                查看常见问题
+              <h3 className="text-lg font-bold text-gray-900 mb-3">FAQ</h3>
+              <p className="text-gray-600 mb-4 text-sm">Before contacting us, check our FAQ page — you might find the answer you need.</p>
+              <Link href="/faq" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">
+                View FAQ
               </Link>
             </div>
 
             <div className="bg-white rounded-lg border-2 border-gray-200 p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">反馈建议</h3>
-              <p className="text-gray-600 text-sm">
-                我们非常重视用户的反馈和建议。如果您对我们的计算器有任何改进意见，或者希望我们添加新的功能，请随时告诉我们。
-              </p>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">Feedback</h3>
+              <p className="text-gray-600 text-sm">We value your feedback and suggestions. If you have any ideas for improving our calculators or would like to see new features, please let us know.</p>
             </div>
           </div>
         </div>
 
-        {/* Additional Info */}
         <div className="mt-8 bg-white rounded-lg border-2 border-gray-200 p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">关于我们的服务</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">About Our Services</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div>
-              <h3 className="font-bold text-gray-900 mb-2">技术支持</h3>
-              <p className="text-gray-600 text-sm">
-                如果您在使用计算器时遇到技术问题，请详细描述问题和您的操作步骤。
-              </p>
+              <h3 className="font-bold text-gray-900 mb-2">Technical Support</h3>
+              <p className="text-gray-600 text-sm">If you encounter technical issues with our calculators, please describe the problem and your steps in detail.</p>
             </div>
             <div>
-              <h3 className="font-bold text-gray-900 mb-2">功能建议</h3>
-              <p className="text-gray-600 text-sm">
-                我们欢迎您提出新功能建议，帮助我们改进产品，为更多用户提供更好的服务。
-              </p>
+              <h3 className="font-bold text-gray-900 mb-2">Feature Requests</h3>
+              <p className="text-gray-600 text-sm">We welcome new feature suggestions to help us improve and serve more users better.</p>
             </div>
             <div>
-              <h3 className="font-bold text-gray-900 mb-2">合作咨询</h3>
-              <p className="text-gray-600 text-sm">
-                如果您有商务合作意向，请通过邮件联系我们，我们会尽快与您沟通。
-              </p>
+              <h3 className="font-bold text-gray-900 mb-2">Business Inquiries</h3>
+              <p className="text-gray-600 text-sm">For business partnership opportunities, please reach out via email and we'll get back to you promptly.</p>
             </div>
           </div>
         </div>

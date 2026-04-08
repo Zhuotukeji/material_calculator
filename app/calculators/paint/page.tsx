@@ -4,9 +4,9 @@ import PaintForm from '@/components/PaintForm';
 import { getCalculatorJsonLd, getBreadcrumbJsonLd } from '@/lib/jsonld';
 
 export const metadata: Metadata = {
-  title: '油漆计算器 - 在线计算墙面油漆用量',
-  description: '免费在线油漆用量计算器，输入房间尺寸自动计算所需油漆量。支持不同涂刷遍数和涂刷率设置，帮您精确采购，避免浪费。',
-  keywords: ['油漆计算器', '墙面油漆用量', '乳胶漆计算', '刷漆面积计算', '装修油漆'],
+  title: 'Paint Calculator - Calculate Wall Paint Quantity Online',
+  description: 'Free online paint calculator. Enter room dimensions to calculate paint needed. Supports different coat numbers and coverage rates for accurate purchasing.',
+  keywords: ['paint calculator', 'wall paint quantity', 'latex paint calculator', 'paint coverage', 'renovation paint'],
   alternates: { canonical: '/calculators/paint' },
 };
 
@@ -20,69 +20,66 @@ export default function PaintCalculator() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbJsonLd([
-          { name: '首页', url: '/' },
-          { name: '油漆计算器', url: '/calculators/paint' },
+          { name: 'Home', url: '/' },
+          { name: 'Paint Calculator', url: '/calculators/paint' },
         ])) }}
       />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">🎨 油漆计算器</h1>
-          <p className="text-gray-600">计算墙面油漆用量，包含涂刷遍数和损耗</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">🎨 Paint Calculator</h1>
+          <p className="text-gray-600">Calculate wall paint quantity including coats and waste</p>
         </div>
 
         <PaintForm />
 
-        {/* 解释区 */}
         <div className="mt-12 bg-white rounded-lg shadow-md p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">计算逻辑说明</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">How It Works</h2>
           <div className="prose prose-gray max-w-none">
-            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">计算公式</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">Formula</h3>
             <div className="bg-gray-50 p-4 rounded-md font-mono text-sm">
-              墙面面积 = 2 × (长 + 宽) × 高<br/>
-              总涂刷面积 = 墙面面积 × 涂刷遍数<br/>
-              所需油漆 = 总涂刷面积 ÷ 单遍涂刷率
+              Wall Area = 2 x (Length + Width) x Height<br/>
+              Total Paint Area = Wall Area x Number of Coats<br/>
+              Paint Needed = Total Paint Area / Coverage Rate per Coat
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">适用场景</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">Best For</h3>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
-              <li>规则矩形房间的墙面涂刷</li>
-              <li>乳胶漆、水性漆等常见墙面漆</li>
-              <li>标准施工条件下的用量估算</li>
+              <li>Regular rectangular rooms</li>
+              <li>Latex paint and water-based paints</li>
+              <li>Standard application conditions</li>
             </ul>
-            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">常见误区</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">Common Mistakes</h3>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
-              <li>忽略涂刷遍数：底漆 + 面漆通常需要 2-3 遍</li>
-              <li>不考虑墙面状况：粗糙墙面吸漆更多</li>
-              <li>忘记预留损耗：施工过程会有 5-10% 损耗</li>
+              <li>Forgetting coat count: primer + topcoat usually requires 2-3 coats</li>
+              <li>Ignoring wall condition: rough walls absorb more paint</li>
+              <li>Not accounting for waste: application process adds 5-10% waste</li>
             </ul>
-            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">实地测量技巧</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">Measuring Tips</h3>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
-              <li>使用激光测距仪更准确</li>
-              <li>多测几次取平均值</li>
-              <li>记录门窗尺寸，可适当扣除</li>
-              <li>异形墙面分段测量后相加</li>
+              <li>Use a laser distance measurer for accuracy</li>
+              <li>Measure multiple times and take the average</li>
+              <li>Record door and window sizes to deduct later</li>
+              <li>Measure irregular walls in sections and add up</li>
             </ul>
           </div>
         </div>
 
-        {/* 相关推荐 */}
         <div className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">相关内容</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Related Content</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link href="/articles/paint-coverage-guide" className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">一桶油漆能刷多少平米墙面？</h3>
-              <p className="text-gray-600 text-sm">了解油漆的理论涂刷面积和实际用量</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">How Much Area Can One Bucket Cover?</h3>
+              <p className="text-gray-600 text-sm">Learn about theoretical and actual paint coverage</p>
             </Link>
             <Link href="/calculators/tile" className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">🔲 瓷砖计算器</h3>
-              <p className="text-gray-600 text-sm">计算瓷砖数量和铺贴损耗</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">🔲 Tile Calculator</h3>
+              <p className="text-gray-600 text-sm">Calculate tile quantity and laying waste</p>
             </Link>
           </div>
         </div>
 
-        {/* 免责声明 */}
         <div className="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-md">
           <p className="text-sm text-gray-700">
-            <strong>免责声明：</strong>本计算器提供的结果仅供参考。实际用量受墙面状况、施工工艺、产品品牌等因素影响。建议购买时预留 10-15% 余量，并咨询专业人士。
+            <strong>Disclaimer:</strong> Results are estimates only. Actual quantities depend on wall condition, application method, and product brand. We recommend purchasing 10-15% extra and consulting a professional.
           </p>
         </div>
       </div>

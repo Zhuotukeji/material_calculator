@@ -5,8 +5,8 @@ import { getFaqPageJsonLd } from '@/lib/jsonld';
 import FaqClient from '@/components/FaqClient';
 
 export const metadata: Metadata = {
-  title: '常见问题',
-  description: '装修材料计算相关的常见问题解答，包括瓷砖、油漆、地板选购和计算技巧。',
+  title: 'FAQ',
+  description: 'Frequently asked questions about material calculation, including tile, paint, and flooring selection and calculation tips.',
   alternates: { canonical: '/faq' },
 };
 
@@ -21,14 +21,14 @@ export default function FaqPage() {
       />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <nav className="text-sm text-gray-600 mb-6">
-          <Link href="/" className="hover:text-blue-600">首页</Link>
+          <Link href="/" className="hover:text-blue-600">Home</Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-900">常见问题</span>
+          <span className="text-gray-900">FAQ</span>
         </nav>
 
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">常见问题</h1>
-          <p className="text-xl text-gray-600">装修材料计算相关的常见问题解答</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">FAQ</h1>
+          <p className="text-xl text-gray-600">Frequently asked questions about material calculation</p>
         </div>
 
         <FaqClient allFaqs={allFaqs} />
